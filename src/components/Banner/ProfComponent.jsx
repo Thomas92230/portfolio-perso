@@ -31,7 +31,7 @@ const ProfComponent = () => {
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="https://www.linkedin.com/in/icham-boudehane-sport/">
                   <FaLinkedinIn />
                 </a>
               </span>
@@ -41,6 +41,9 @@ const ProfComponent = () => {
       </Slide>
       <Slide direction="right">
       </Slide>
+      <Profile>
+        <img src="https://images.wakelet.com/resize?id=xD7IqHyYsfA3I_Nog7OUz&h=1024&w=768&q=85#" alt="profile"></img>
+      </Profile>
     </Container>
   );
 };
@@ -138,7 +141,7 @@ const Social = styled.div`
 `;
 const Profile = styled.div`
   img {
-    width: 25rem;
+    width: 20rem;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {

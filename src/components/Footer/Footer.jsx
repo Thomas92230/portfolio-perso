@@ -59,21 +59,21 @@ const Footer = () => {
           <div className="icons">
             <Zoom>
               <span>
-                <a href="/">
+                <a href="https://github.com/Thomas92230/portfolio-perso.git">
                   <AiFillGithub />
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
+                <a href="https://www.linkedin.com/in/icham-boudehane-sport/">
                   <AiFillLinkedin />
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
+                <a href="https://app.slack.com/client/T04AXJCMPL5/C04BD66980H/rimeto_profile/U04FQRAUJSD">
                   <BsSlack />
                 </a>
               </span>

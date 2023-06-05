@@ -21,14 +21,14 @@ let data = [
       githubLink: "https://github.com/Utilisateur/Nom-du-projet3.git"
   },
   {
-      img: "",
-      disc: "",
-      githubLink: ""
+      img: "https://images.wakelet.com/resize?id=TXUVXGxVo40tsaEwey-Jk&h=341&w=768&q=85#",
+      disc: "Site pour une agence d'évènementiel qui organise des prestations partout dans le monde",
+      githubLink: "https://github.com/Thomas92230/724Events.git"
   },
   {
-      img: "",
-      disc: "",
-      githubLink: ""
+      img: "https://images.wakelet.com/resize?id=5iWgIF_aR8nr_abxId6ga&h=349&w=768&q=85#",
+      disc: "Application bancaire pour une nouvelle banque en ligne, l'utilisateur peut accéder à son compte via l'interface de connexion",
+      githubLink: "https://github.com/Thomas92230/ARGENT-Bank.git"
   }
 ];
 
