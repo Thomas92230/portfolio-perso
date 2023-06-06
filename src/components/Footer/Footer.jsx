@@ -71,13 +71,6 @@ const Footer = () => {
                 </a>
               </span>
             </Zoom>
-            <Zoom>
-              <span>
-                <a href="https://app.slack.com/client/T04AXJCMPL5/C04BD66980H/rimeto_profile/U04FQRAUJSD">
-                  <BsSlack />
-                </a>
-              </span>
-            </Zoom>
           </div>
         </div>
         <Fade>

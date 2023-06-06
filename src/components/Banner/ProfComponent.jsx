@@ -26,11 +26,6 @@ const ProfComponent = () => {
             <p>Jetez un coup d'œil à mon</p>
             <div className="social-icons">
               <span>
-                <a href="/">
-                  <AiOutlineInstagram />
-                </a>
-              </span>
-              <span>
                 <a href="https://www.linkedin.com/in/icham-boudehane-sport/">
                   <FaLinkedinIn />
                 </a>
