@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { GiEarthAmerica } from "react-icons/gi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
 
@@ -14,7 +12,7 @@ const ProfComponent = () => {
            Bonjour, <span className="green"> je suis </span>
           </h4>
           <h1 className="green">Icham BOUDEHANE</h1>
-          <h3>Intégrateur web</h3>
+          <h3>Développeur web</h3>
           <p>
           Je souhaite évoluer vers un contrat de professionnalisation 
           dans le cadre d'une formation d'intégrateur-développeur web, 
