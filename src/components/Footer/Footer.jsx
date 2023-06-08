@@ -25,7 +25,7 @@ const Footer = () => {
             <h1>Adresse :</h1>
           </Slide>
           <Slide direction="left">
-            <p> 74 Ter, avenue Chandon, 92230 GENNEVILLIERS</p>
+            <p> 74 Ter, avenue anatole france, 75O11 Paris</p>
           </Slide>
         </div>
         <div className="links">
