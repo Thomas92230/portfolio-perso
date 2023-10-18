@@ -18,7 +18,7 @@ let data = [
   {
       img: "https://images.wakelet.com/resize?id=EvH6Cy01UoG62tOspcK7n&h=361&w=768&q=85#",
       disc: "Ohmyfood, un site de restauration, sur lequel des centaines de restaurateurs proposent leurs menus",
-      githubLink: "https://github.com/Utilisateur/Nom-du-projet3.git"
+      githubLink: "https://github.com/Thomas92230/OhMyFood-Project.git"
   },
   {
       img: "https://images.wakelet.com/resize?id=TXUVXGxVo40tsaEwey-Jk&h=341&w=768&q=85#",
