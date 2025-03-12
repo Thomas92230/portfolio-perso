@@ -1,62 +1,199 @@
-import React from 'react'
-import styled from 'styled-components';
-import SliderComp from './Slider';
-import { Zoom } from 'react-awesome-reveal';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import Project from './Project';
+import { projectsData } from '../../components/data/projectsData';
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate3d(0px, 20px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
+const ProjectsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 2rem;
+  margin-top: -1rem;
+`;
+
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem;
+`;
+
+const HeaderTitle = styled.h1`
+  margin-bottom: 40px;
+  font-size: 3.5rem;
+  font-family: var(--primaryFont);
+`;
+
+const Body = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const BodyContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2.5rem;
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+`;
+
+const ProjectStyle = styled.div`
+  background-color: rgb(30, 31, 32);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  text-align: center;
+  transition: transform 0.2s;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:hover .project-description {
+    animation: ${fadeIn} 1000ms both;
+    opacity: 1;
+    height: auto;
+  }
+
+  &:hover .project-title,
+  &:hover .project-image {
+    animation: ${fadeOut} 1000ms both;
+  }
+`;
+
+const ProjectTitleStyle = styled.h2`
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: white;
+  transition: opacity 1000ms;
+`;
+
+const ProjectImageStyle = styled.img`
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: opacity 1000ms;
+`;
+
+const ProjectActionsStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
+const ActionButtonStyle = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color:rgb(4, 185, 146);
+  }
+`;
+
+const ProjectDescriptionStyle = styled.div`
+  background: #01be96; 
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+  text-align: center;
+  max-height: 150px; 
+  overflow-y: auto; 
+`;
+
+const ProjectTagsStyle = styled.div`
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Projects = () => {
-    const projects = [
-      {
-        img: 'project1.jpg',
-        disc: 'Description du projet 1',
-        githubLink: 'https://github.com/Thomas92230/bluelp6.git'
-      },
-      {
-        img: 'project2.jpg',
-        disc: 'Description du projet 2',
-        githubLink: 'https://github.com/Utilisateur/Nom-du-projet.git'
-      },
-      // Ajout d'autres objets 
-    ];
-  
-    return (
-      <Container id='project'>
-        <Zoom>
-          <h1>Projets <span className="green">récents</span></h1>
-          <p>Voici une sélection des projets sur lesquels j'ai travaillé : agence de voyage, site de location immobilière, restauration ou portfolio. Pour chaque projet, j'ai su m'adapter pour satisfaire aux demandes du client, en exploitant au mieux les différentes technologies : HTML, CSS, Figma et Javascript (React).</p>
-        </Zoom>
-        <Slide>
-          <SliderComp projects={projects} />
-        </Slide>
-      </Container>
-    );
-  };
-  
-  export default Projects;
+  return (
+    <ProjectsContainer>
+      <Header>
+        <HeaderTitle>Projets</HeaderTitle>
+      </Header>
+      <Body>
+        <BodyContainer>
+          {projectsData.map((project) => (
+            <Project
+              key={project.id}
+              title={project.projectName}
+              imageSrc={project.image}
+              description={project.projectDesc}
+              tags={project.tags}
+              demo={project.demo}
+              code={project.code}
+              ProjectStyle={ProjectStyle}
+              ProjectTitleStyle={ProjectTitleStyle}
+              ProjectImageStyle={ProjectImageStyle}
+              ProjectActionsStyle={ProjectActionsStyle}
+              ActionButtonStyle={ActionButtonStyle}
+              ProjectDescriptionStyle={ProjectDescriptionStyle}
+              ProjectTagsStyle={ProjectTagsStyle}
+            />
+          ))}
+        </BodyContainer>
+      </Body>
+    </ProjectsContainer>
+  );
+};
 
-const Container = styled.div`
-    width: 80%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 3rem 0;
-    text-align: center;
-    position: relative;
-    @media(max-width: 840px){
-        width: 90%;
-    }
-    h1{
-        font-size: 1.9rem;
-    }
-
-    p{
-        width: 28rem;
-        margin: 0 auto;
-        padding: 1rem 0;
-        font-size: 0.9rem;
-        @media(max-width : 500px){
-            width: 90%;
-        }
-    }
-    
-`
-
-const Slide = styled.div``
+export default Projects;

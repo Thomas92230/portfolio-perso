@@ -4,7 +4,8 @@ import ProfComponent from "./components/Banner/ProfComponent";
 import Footer from "./components/Footer/Footer";
 import Projects from "./components/Projects/Projects";
 import Services from "./components/Service/Services";
-import Education from "./components/Education/Educations";
+import Education from "./components/education/Educations";
+import Project from "./components/Projects/Project"; 
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       </Banner>
       <Services />
       <LightColor>
-      <Education />
+        <Education />
         <Projects />
       </LightColor>
       <LightColor>

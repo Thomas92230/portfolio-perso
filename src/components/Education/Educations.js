@@ -46,7 +46,6 @@ const Education = () => {
 
 export default Education;
 
-// Styled Components
 const Container = styled.div`
   background: linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%);
   text-align: center;

@@ -1,69 +1,43 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from 'react';
+import { FaPlay, FaRedo } from 'react-icons/fa';
 
-const Project = (props) => {
-    const { img, disc, githubLink } = props.item;
-    
-    return (
-      <Container className='project'>
-        <img src={img} alt="project" />
-        <div className="disc">
-          <h1>Description</h1>
-          <p>
-            {disc}
-            <a href={githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>
-          </p>
-        </div>
-      </Container>
-    );
-  };
-  
-  export default Project;
+const Project = ({
+  title,
+  imageSrc,
+  description,
+  tags,
+  demo,
+  code,
+  ProjectStyle,
+  ProjectTitleStyle,
+  ProjectImageStyle,
+  ProjectActionsStyle,
+  ActionButtonStyle,
+  ProjectDescriptionStyle,
+  ProjectTagsStyle
+}) => {
+  return (
+    <ProjectStyle>
+      <ProjectTitleStyle className="project-title">{title}</ProjectTitleStyle>
+      <ProjectImageStyle className="project-image" src={imageSrc} alt={title} />
+      <ProjectActionsStyle>
+        <ActionButtonStyle onClick={() => window.open(demo, '_blank')}>
+          <FaPlay />
+        </ActionButtonStyle>
+        <ActionButtonStyle onClick={() => window.open(code, '_blank')}>
+          <FaRedo />
+        </ActionButtonStyle>
+      </ProjectActionsStyle>
+      <ProjectDescriptionStyle className="project-description">
+        {description}
+      </ProjectDescriptionStyle>
+      <ProjectTagsStyle className="project-tags">
+        {tags.map((tag, index) => (
+          <span key={index}>{tag}</span>
+        ))}
+      </ProjectTagsStyle>
+    </ProjectStyle>
+  );
+};
 
-const Container = styled.div`
-    height: 10rem;
-    background-color: #4e5156;
-    margin: 0 0.5rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 400ms ease-in-out;
-    }
-    .disc{
-        position: absolute;
-        right: 0;
-        left: 0;
-        bottom: -10rem;
-        text-align: left;
-        padding: 0.5rem;
-        background: linear-gradient(rgba(0,0,0, 0.100), rgba(0,0,0, 0.80));
-        transition: all 400ms ease-in-out;
-        h1{
-            font-size: 1rem;
-        }
-    
-        p{
-            width: 90%;
-            font-size: 0.8rem;
-            a{
-                margin-left: 0.4rem;
-                color: red;
-            }
-        }
-    }
-
-    :hover > img{
-        transform: scale(1.3);
-    }
-
-    :hover > .disc{
-        bottom: 0;
-    }
-
-`
+export default Project;
