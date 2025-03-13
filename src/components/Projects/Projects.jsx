@@ -23,6 +23,28 @@ const fadeOut = keyframes`
   }
 `;
 
+const fadeInRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const fadeOutRight = keyframes`
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+`;
+
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,6 +95,7 @@ const ProjectStyle = styled.div`
   padding: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   width: 100%;
+  height: 100%;
   text-align: center;
   transition: transform 0.2s;
   position: relative;
@@ -90,6 +113,12 @@ const ProjectStyle = styled.div`
   &:hover .project-title,
   &:hover .project-image {
     animation: ${fadeOut} 1000ms both;
+  }
+
+  &:hover .project-tags {
+    animation: ${fadeInRight} 1000ms both;
+    opacity: 1;
+    height: auto;
   }
 `;
 
@@ -123,12 +152,12 @@ const ActionButtonStyle = styled.button`
   transition: color 0.2s;
 
   &:hover {
-    color:rgb(4, 185, 146);
+    color: rgb(4, 185, 146);
   }
 `;
 
 const ProjectDescriptionStyle = styled.div`
-  background: #01be96; 
+  background: #01be96;
   color: #fff;
   padding: 1rem;
   border-radius: 5px;
@@ -142,8 +171,8 @@ const ProjectDescriptionStyle = styled.div`
   transform: translate(-50%, -50%);
   width: calc(100% - 40px);
   text-align: center;
-  max-height: 150px; 
-  overflow-y: auto; 
+  max-height: 150px;
+  overflow-y: auto;
 `;
 
 const ProjectTagsStyle = styled.div`
@@ -162,6 +191,7 @@ const ProjectTagsStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: opacity 1000ms;
 `;
 
 const Projects = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPlay, FaRedo } from 'react-icons/fa';
+import { FaPlay, FaGithub } from 'react-icons/fa';
 
 const Project = ({
   title,
@@ -25,7 +25,7 @@ const Project = ({
           <FaPlay />
         </ActionButtonStyle>
         <ActionButtonStyle onClick={() => window.open(code, '_blank')}>
-          <FaRedo />
+        <FaGithub />
         </ActionButtonStyle>
       </ProjectActionsStyle>
       <ProjectDescriptionStyle className="project-description">

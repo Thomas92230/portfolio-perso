@@ -16,11 +16,11 @@ const skills = [
   { name: "SCSS", image: "https://cdn.worldvectorlogo.com/logos/sass-1.svg" },
   { name: "JavaScript", image: "https://cdn.worldvectorlogo.com/logos/javascript-1.svg" },
   { name: "React", image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
-  { name: "PHP", image: "https://cdn.worldvectorlogo.com/logos/php-1.svg" },
+  { name: "PHP", image: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" },
   { name: "Java", image: "https://cdn.worldvectorlogo.com/logos/java.svg" },
   { name: "Spring Boot", image: "https://cdn.worldvectorlogo.com/logos/spring-3.svg" },
   { name: "Git", image: "https://cdn.worldvectorlogo.com/logos/git-icon.svg" },
-  { name: "Maven", image: "https://cdn.worldvectorlogo.com/logos/maven-3.svg" },
+  { name: "Maven", image: "https://upload.wikimedia.org/wikipedia/commons/5/52/Apache_Maven_logo.svg" },
   { name: "Angular", image: "https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg" },
   { name: "MongoDB", image: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" }
 ];
