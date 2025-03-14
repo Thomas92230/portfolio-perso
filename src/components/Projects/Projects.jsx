@@ -66,7 +66,7 @@ const Header = styled.div`
 
 const HeaderTitle = styled.h1`
   margin-bottom: 40px;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: var(--primaryFont);
 `;
 
@@ -123,7 +123,7 @@ const ProjectStyle = styled.div`
 `;
 
 const ProjectTitleStyle = styled.h2`
-  font-size: 2em;
+  font-size: 1.2em;
   margin-bottom: 15px;
   color: white;
   transition: opacity 1000ms;
@@ -176,7 +176,7 @@ const ProjectDescriptionStyle = styled.div`
 `;
 
 const ProjectTagsStyle = styled.div`
-  background: rgba(0, 0, 0, 0.7);
+  background: #01be96;
   color: #fff;
   padding: 0.5rem;
   border-radius: 5px;
