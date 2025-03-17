@@ -4,28 +4,27 @@ import { FiFlag } from 'react-icons/fi';
 
 const Header = () => {
     const [bar, setBar] = useState(false);
-  return (
-    <Container bar={bar}>
-        <Logo>
-            <span className='green'><FiFlag/></span>
-            <h1>Portfolio</h1>
-        </Logo>
-        <Nav bar={bar}>
-            <span><a href="#home">Accueil</a></span>
-            <span><a href="#service">Services</a></span>
-            <span><a href="#project">Projets</a></span>
-            <span><a href="#footer">Contact</a></span>
-        </Nav>
-        <div
-        onClick={() => setBar(!bar)}
-        className="bars">
-            <div className="bar"></div>
-        </div>
-    </Container>
-  )
+    
+    return (
+        <Container bar={bar}>
+            <Logo>
+                <span className='green'><FiFlag/></span>
+                <h1>Portfolio</h1>
+            </Logo>
+            <Nav bar={bar}>
+                <span><a href="#home" onClick={() => setBar(false)}>Accueil</a></span>
+                <span><a href="#service" onClick={() => setBar(false)}>Services</a></span>
+                <span><a href="#project" onClick={() => setBar(false)}>Projets</a></span>
+                <span><a href="#footer" onClick={() => setBar(false)}>Contact</a></span>
+            </Nav>
+            <div onClick={() => setBar(!bar)} className="bars">
+                <div className="bar"></div>
+            </div>
+        </Container>
+    );
 }
 
-export default Header
+export default Header;
 
 const Container = styled.div`
     display: flex;
@@ -37,14 +36,17 @@ const Container = styled.div`
     padding: 1.5rem 0;
     position: relative;
     animation: header 500ms ease-in-out;
+
     @media(max-width: 840px){
         width: 90%;
     }
-    .bars{
+
+    .bars {
         display: none;
     }
+
     @media(max-width:640px){
-        .bars{
+        .bars {
             width: 40px;
             height: 40px;
             position: relative;
@@ -53,13 +55,15 @@ const Container = styled.div`
             justify-content: center;
             padding: 0.5rem;
             z-index: 100;
-            .bar{
+            
+            .bar {
                 position: absolute;
                 width: 100%;
                 height: 2px;
                 background-color: ${props => props.bar ? "transparent" : "#fff"};
                 transition: all 400ms ease-in-out;
-                :before, :after{
+
+                :before, :after {
                     content: "";
                     width: 100%;
                     height: 2px;
@@ -67,57 +71,63 @@ const Container = styled.div`
                     position: absolute;
                 }
 
-                :before{
+                :before {
                     transform: ${props => props.bar ? "rotate(45deg)" : "translateY(10px)"};
                     transition: all 400ms ease-in-out;
                 }
 
-                :after{
+                :after {
                     transform: ${props => props.bar ? "rotate(-45deg)" : "translateY(-10px)"};
                     transition: all 400ms ease-in-out;
                 }
             }
         }
     }
-`
+`;
+
 const Logo = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    span{
+
+    span {
         font-size: 1.8rem;
     }
 
-    h1{
+    h1 {
         font-weight: 600;
         font-size: 1.2rem;
     }
-`
+`;
+
 const Nav = styled.div`
     @media(max-width:640px){
         position: fixed;
         display: flex;
         flex-direction: column;
         background-color: #01be96;
-        inset: 0;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        gap: 2rem;
+        top: 10%;
+        right: ${props => props.bar ? "5%" : "-100%"};
+        width: 70%;
+        padding: 1.5rem;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        gap: 1.5rem;
         font-weight: 700;
-        height: ${props => props.bar ? "100vh" : 0};
-        transition: height 400ms ease-in-out;
-        overflow: hidden;
-        z-index: 100;
+        transition: right 400ms ease-in-out;
+        z-index: 99;
     }
-    span{
+
+    span {
         margin-left: 1rem;
-        a{
+
+        a {
             color: #fff;
             text-decoration: none;
             font-weight: 400;
             position: relative;
-            :before{
+
+            :before {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -129,13 +139,15 @@ const Nav = styled.div`
                 transform-origin: right;
                 transition: transform 400ms ease-in-out;
             }
-            :hover:before{
+
+            :hover:before {
                 transform: scale(1);
                 transform-origin: left;
             }
-            :hover{
+
+            :hover {
                 opacity: 0.7;
             }
         }
     }
-`
+`;
