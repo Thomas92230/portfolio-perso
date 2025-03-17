@@ -46,18 +46,7 @@ const Footer = () => {
         <Slide direction="left" delay={1}>
           <h1>Contact</h1>
         </Slide>
-        <div className="address">
-          <Slide direction="left">
-            <h1>Adresse :</h1>
-          </Slide>
-          <Slide direction="left">
-            <p> 74 Ter, avenue anatole france, 75011 Paris</p>
-          </Slide>
-        </div>
         <div className="links">
-          <Slide direction="left">
-            <h1>Contacter moi directement :</h1>
-          </Slide>
           <div>
             <span>
               <FiPhoneCall />
@@ -79,7 +68,7 @@ const Footer = () => {
         </div>
         <div className="profiles">
           <Slide direction="left">
-            <h1>Consulter mes profils</h1>
+            <h1>Consultez mes profils ci-dessous :</h1>
           </Slide>
           <div className="icons">
             <Zoom>
@@ -177,6 +166,7 @@ const Container = styled.div`
 
 const Profile = styled.div`
   flex: 1;
+
   .address {
     padding: 1rem 0;
     h1 {
@@ -201,6 +191,7 @@ const Profile = styled.div`
     div {
       display: flex;
       align-items: center;
+      margin-top: 0.5rem;
       gap: 0.5rem;
       a {
         text-decoration: none;

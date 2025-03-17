@@ -29,7 +29,7 @@ export const projectsData = [
     {
         id: 4,
         projectName: 'Site de photographe',
-        projectDesc: "Optimisation des performances du site de photographe Nina Carducci, améliorations de l’accessibilité du site ainsi que son référencement. ",
+        projectDesc: "Optimisation des performances du site de la photographe Nina Carducci, amélioration de l’accessibilité du site ainsi que son référencement. ",
         tags: ['HTML', 'CSS', 'Javascript'],
         demo: 'https://thomas92230.github.io/project-cardu/',
         code: "https://github.com/Thomas92230/project-cardu.git",
@@ -40,7 +40,7 @@ export const projectsData = [
         projectName: 'Maquette figma Wikiciné',
         projectDesc: "Maquette Figma de l'application Wikiciné, conçue pour offrir une esthétique moderne tout en privilégiant la facilité d’utilisation.",
         tags: ['Figma', 'Iconify'],
-        demo: "https://www.figma.com/proto/RmMmqzUJfgP0vS2Bz8dufT/WikiCin%C3%A9---Projet-Dawan?node-id=91-1769&t=YTAOrgchzuxwLJNC-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=91%3A1769&show-proto-sidebar=1",
+        demo: "https://www.figma.com/proto/o62Shvfb4aE5Z16AzzWogM/Maquette-Wikicin%C3%A9?node-id=5-1879&p=f&t=HzxjyvtmHZ7r5Vzs-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A1879&show-proto-sidebar=1",
         code: "https://github.com/JohanChereau/wikicine-dawan.git",
         image: "https://images.wakelet.com/resize?id=4xzyvfB3M5OBzwk_hg_z5&w=1600&h=actual&q=85"
     },  

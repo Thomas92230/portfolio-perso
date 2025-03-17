@@ -4,13 +4,13 @@ import styled from "styled-components";
 const diplomas = [
   {
     year: "2024-2025",
-    title: "POEI Concepteur d'applications Java",
-    school: "Dawan", 
+    title: "Alternance concepteur d'applications Java",
+    school: "Dawan Paris", 
   },
   {
     year: "2022-2023",
     title: "Formation développeur front-end",
-    school: "Openclassrooms",
+    school: "Openclassrooms Paris",
   },
   {
     year: "2019-2022",
@@ -20,7 +20,7 @@ const diplomas = [
   {
     year: "2018-2019",
     title: "Baccalauréat littérature, mention Assez Bien",
-    school: "Lycée Isaac Newton",
+    school: "Lycée Isaac Newton Clichy-la-Garenne",
   },
 ];
 
