@@ -75,32 +75,61 @@ const Texts = styled.div`
   flex: 1;
   max-width: 600px;
   
-  h4 {
-    padding: 1rem 0;
-    font-weight: 500;
-  }
-
   h1 {
     font-size: 3rem;
     font-family: "Secular One", sans-serif;
     letter-spacing: 2px;
+
+    @media (max-width: 1080px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 840px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      font-size: 1.8rem;
+    }
   }
 
   h3 {
-    font-weight: 500;
     font-size: 1.1rem;
-    padding-bottom: 1.2rem;
-    text-transform: lowercase;
-  }
+    margin-bottom: 1rem; 
 
-  h3::first-letter {
-    text-transform: uppercase;
+    @media (max-width: 1080px) {
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    @media (max-width: 840px) {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      font-size: 0.85rem;
+      margin-bottom: 0.7rem;
+    }
   }
 
   p {
-    font-weight: 300;
+    font-size: 1rem;
+
+    @media (max-width: 1080px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 840px) {
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      font-size: 0.8rem;
+    }
   }
 `;
+
 
 const ButtonsContainer = styled.div`
   margin-top: 2rem;
@@ -109,18 +138,21 @@ const ButtonsContainer = styled.div`
 
   a.button {
     padding: 0.7rem 2rem;
-    cursor: pointer;
-    background-color: #01be96;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    filter: drop-shadow(0px 10px 10px #01be9551);
-    transition: filter 400ms ease-in-out;
+    font-size: 1rem; 
 
-    &:hover {
-      filter: drop-shadow(0px 10px 10px #01be9570);
+    @media (max-width: 1080px) {
+      padding: 0.6rem 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 840px) {
+      padding: 0.5rem 1.6rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      padding: 0.5rem 1.4rem;
+      font-size: 0.8rem;
     }
   }
 `;
@@ -181,6 +213,11 @@ const Profile = styled.div`
     border-radius: 20%;
     margin: 0;
 
+    @media (max-width: 1120px) and (min-width: 790px) {
+      width: 20rem;   
+      margin-left: -8rem; 
+    }
+
     @media (max-width: 790px) {
       width: 100%; 
       justify-self: center;
@@ -188,15 +225,15 @@ const Profile = styled.div`
     }
 
     @media (max-width: 660px) {
-      width: 100%;
+      width: 17rem;
       justify-self: center; 
-      margin: 0;
+      margin-left: 3rem;
     }
 
     @media (max-width: 640px) {
-      width: 100%;
+      width: 17rem;
       justify-self: center; 
-      margin: 0;
+      margin-left: 3rem;
     }
   }
 
@@ -204,16 +241,19 @@ const Profile = styled.div`
   @media (max-width: 790px) {
     justify-content: flex-start; 
     margin: 0;
+    width: 100%;
   }
 
   @media (max-width: 660px) {
     justify-content: center; 
     margin: 0;
+    margin: 13rem;
   }
 
   @media (max-width: 640px) {
     justify-content: center; 
     margin: 0;
+    margin: 12 rem;
   }
 
   &:hover img {
