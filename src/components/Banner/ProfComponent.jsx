@@ -24,7 +24,8 @@ const ProfComponent = () => {
           </p>
           <ButtonsContainer>
             <a href="#footer" className="button">Contact</a>
-            <a href="/cv.pdf" className="button">Télécharger CV</a>
+            <a href="/CV_Icham_BOUDEHANE.pdf" className="button" download>Télécharger CV</a>
+
           </ButtonsContainer>
           <Social>
             <p>Jetez un coup d'œil à mon</p>
@@ -169,31 +170,54 @@ const Social = styled.div`
 const Profile = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  justify-content: flex-end; 
-  width: 185%; 
-  
+  justify-content: center; 
+  width: 100%; 
+  margin-left: 12rem;
 
   img {
     width: 23rem;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     border-radius: 20%;
+    margin: 0;
 
     @media (max-width: 790px) {
-      width: 22rem;
+      width: 100%; 
+      justify-self: center;
+      margin: 0;
     }
 
     @media (max-width: 660px) {
-      width: 20rem;
+      width: 100%;
+      justify-self: center; 
+      margin: 0;
     }
 
     @media (max-width: 640px) {
       width: 100%;
+      justify-self: center; 
+      margin: 0;
     }
+  }
+
+  
+  @media (max-width: 790px) {
+    justify-content: flex-start; 
+    margin: 0;
+  }
+
+  @media (max-width: 660px) {
+    justify-content: center; 
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    justify-content: center; 
+    margin: 0;
   }
 
   &:hover img {
     transform: translateY(-10px);
   }
 `;
+

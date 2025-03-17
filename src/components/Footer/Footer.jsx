@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
-import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
 
 const Footer = () => {
+  const [status, setStatus] = useState(""); 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    
+    if (formData.name && formData.email && formData.message) {
+      setStatus("SUCCESS");
+      setFormData({ name: "", email: "", message: "" }); 
+    } else {
+      setStatus("ERROR");
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   const scrollUp = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
   };
+
   return (
     <Container id="footer">
       <Profile>
@@ -25,7 +51,7 @@ const Footer = () => {
             <h1>Adresse :</h1>
           </Slide>
           <Slide direction="left">
-            <p> 74 Ter, avenue anatole france, 75O11 Paris</p>
+            <p> 74 Ter, avenue anatole france, 75011 Paris</p>
           </Slide>
         </div>
         <div className="links">
@@ -80,26 +106,47 @@ const Footer = () => {
       </Profile>
       <Form>
         <Slide direction="right">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="name">
               <span>
                 <CgProfile />
               </span>
-              <input type="text" placeholder="Nom/Prénom..." />
+              <input
+                type="text"
+                name="name"
+                placeholder="Nom/Prénom..."
+                value={formData.name}
+                onChange={handleChange}
+              />
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" placeholder="Email..." />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email..."
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
+              <textarea
+                name="message"
+                cols="30"
+                rows="10"
+                placeholder="Message..."
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
             </div>
-            <button>Envoyer</button>
+            <button type="submit">Envoyer</button>
+            {status === "SUCCESS" && <p className="success-message">Merci pour votre message !</p>}
+            {status === "ERROR" && <p className="error-message">Veuillez remplir tous les champs.</p>}
           </form>
         </Slide>
       </Form>
@@ -127,6 +174,7 @@ const Container = styled.div`
     gap: 3rem;
   }
 `;
+
 const Profile = styled.div`
   flex: 1;
   .address {
@@ -196,6 +244,7 @@ const Profile = styled.div`
     }
   }
 `;
+
 const ArrowUp = styled.div`
   width: 2rem;
   height: 2rem;
@@ -213,6 +262,7 @@ const ArrowUp = styled.div`
     top: 16rem;
   }
 `;
+
 const Form = styled.div`
   flex: 1;
   h1 {
@@ -263,6 +313,16 @@ const Form = styled.div`
       :hover {
         filter: drop-shadow(0px 6px 9px #01be9551);
       }
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
     }
   }
 `;

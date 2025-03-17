@@ -196,7 +196,7 @@ const ProjectTagsStyle = styled.div`
 
 const Projects = () => {
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id ="project">
       <Header>
         <HeaderTitle>Projets</HeaderTitle>
       </Header>

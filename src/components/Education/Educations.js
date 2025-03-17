@@ -82,6 +82,11 @@ const DiplomaCard = styled.div`
     transform: scale(1.05);
     background-color: rgb(40, 42, 45);
   }
+
+  @media (max-width: 470px) {
+    width: 90%; 
+    padding: 1rem; 
+  }
 `;
 
 const Icon = styled.div`
@@ -98,13 +103,25 @@ const DiplomaInfo = styled.div`
 const Year = styled.p`
   color: white;
   font-weight: bold;
+
+  @media (max-width: 470px) {
+    font-size: 0.9rem; 
+  }
 `;
 
 const TitleText = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
+
+  @media (max-width: 470px) {
+    font-size: 1rem; 
+  }
 `;
 
 const School = styled.p`
   font-size: 0.9rem;
+
+  @media (max-width: 470px) {
+    font-size: 0.8rem; 
+  }
 `;
