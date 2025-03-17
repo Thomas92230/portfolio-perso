@@ -207,7 +207,7 @@ const Profile = styled.div`
   margin-left: 12rem;
 
   img {
-    width: 23rem;
+    width: 21rem;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     border-radius: 20%;
